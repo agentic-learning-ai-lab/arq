@@ -1,0 +1,100 @@
+[tool.poetry]
+name = "arq"
+version = "1.0.0"
+description = "Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions"
+authors = ["Anonymous"]
+license = "MIT"
+keywords = ["machine-learning", "deep-learning", "reinforcement-learning"]
+readme = "README.md"
+
+# Include the typings directory in the package
+packages = [
+    { include = "artificial_dopamine", from = "cb1/src" }
+]
+include = [
+    { path = "tests", format = "sdist" }
+]
+exclude = [
+    "**/*.pyc",
+    "**/*.pyi",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+optax = "^0.1.5"
+tensorboard = "^2.13.0"
+rich = "^13.3.5"
+tqdm = "^4.65.0"
+tensorboardx = "^2.6"
+gymnasium = {version = "^0.28.1", extras = ["box2d", "atari", "accept-rom-license"]}
+tabulate = "^0.9.0"
+
+torch = "^2.5.1"
+torchvision = "^0.20.1"
+torchaudio = "^2.5.1"
+
+sb3-contrib = ">=2.0.0a9"
+moviepy = "^1.0.3"
+optuna = "^3.2.0"
+minatar = "^1.0.15"
+dmc2gym = {path = "dmc2gym"}
+gym-minigrid = "^1.2.2"
+flax = "^0.10.0"
+jax = { version = "^0.4.36", extras = ["cuda12"] }
+wandb = "^0.18.5"
+
+[tool.poetry.dev-dependencies]
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "jax_cuda"
+url = "https://storage.googleapis.com/jax-releases/jax_cuda_releases.html"
+priority = "supplemental"
+
+
+[[tool.poetry.source]]
+name = "jax"
+url = "https://storage.googleapis.com/jax-releases/jax_releases.html"
+priority = "supplemental"
+
+
+[[tool.poetry.source]]
+name = "torch_cu118"
+url = "https://download.pytorch.org/whl/cu118"
+priority = "supplemental"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+pre-commit = "^3.3.2"
+tomli = "^2.0.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.codespell]
+skip = "./tests/**/*,./poetry.lock"
+
+[tool.pyright]
+include = ["cb1/src/**", "cb2/src/**"]
+exclude = ["**/__pycache__", "src/_vendor/**"]
+
+typeCheckingMode = "off"
+pythonVersion = "3.9"
+pythonPlatform = "All"
+typeshedPath = "typeshed"
+enableTypeIgnoreComments = true
+
+# This is required as the CI pre-commit does not download required modules
+reportMissingImports = "none"
+
+[tool.autopep8]
+max_line_length = 120
+ignore = "E501,W6"  # or ["E501", "W6"]
+in-place = true
+recursive = true
+aggressive = 3
