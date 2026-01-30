@@ -9,7 +9,7 @@ readme = "README.md"
 
 # Include the typings directory in the package
 packages = [
-    { include = "artificial_dopamine", from = "cb1/src" }
+    { include = "artificial_dopamine", from = "src" }
 ]
 include = [
     { path = "tests", format = "sdist" }
@@ -80,7 +80,7 @@ build-backend = "poetry.core.masonry.api"
 skip = "./tests/**/*,./poetry.lock"
 
 [tool.pyright]
-include = ["cb1/src/**", "cb2/src/**"]
+include = ["src/**"]
 exclude = ["**/__pycache__", "src/_vendor/**"]
 
 typeCheckingMode = "off"
