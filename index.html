@@ -1,33 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
-            text-align: center;
-        }
-        h1 {
-            font-size: 3rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="description" content="Official Site for Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions">
+  <meta property="og:title" content="ARQ: Action-Conditioned Root Mean Squared Q-Functions"/>
+  <meta property="og:description" content="Official Site for Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions"/>
+  <meta property="og:url" content="https://YOUR_USERNAME.github.io/ARQ-Final/"/>
+  <meta property="og:image" content="static/images/minatar.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="ARQ: Action-Conditioned Root Mean Squared Q-Functions">
+  <meta name="twitter:description" content="Local RL without backpropagation using action-conditioned RMS goodness functions">
+  <meta name="twitter:image" content="static/images/minatar.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="keywords" content="reinforcement learning, forward-forward, local learning, backprop-free, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ARQ: Local RL with Action-Conditioned RMS Q-Functions</title>
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)']],
+        displayMath: [['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Coming Soon</h1>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions</h1>
+            <div class="is-size-5 publication-authors">
+                <!-- Paper authors -->
+                <span class="author-block">
+                    <!-- <a href="https://frankwu.io" target="_blank"> -->
+                        Frank Wu
+                    <!-- </a> -->
+                    <sup>1,2</sup>,
+                </span>
+                <span class="author-block">
+                    <a href="https://mengyeren.com/" target="_blank">Mengye Ren</a><sup>2</sup>
+                </span>
+            </div>
+            
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>Carnegie Mellon University, <sup>2</sup>New York University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2510.06649" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <!-- Github link -->
+              <span class="link-block">
+                <a href="https://github.com/agentic-learning-ai-lab/arq" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+</section>
+
+<!-- Teaser -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <p style="text-align: center;">
+        <img src="static/images/Minatar.png" alt="teaser figure" width="1500" height=auto>
+      </p>
+      <h2 class="subtitle has-text-centered is-size-6" style="margin-top:0.5cm;">
+        ARQ achieves superior performance compared to state-of-the-art local backprop-free RL methods 
+        and outperforms algorithms trained with backpropagation on most MinAtar tasks.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            The Forward-Forward (FF) Algorithm is a recently proposed learning procedure for neural networks 
+            that employs two forward passes instead of the traditional forward and backward passes used in 
+            backpropagation. However, FF remains largely confined to supervised settings, leaving a gap at 
+            domains where learning signals can be yielded more naturally such as RL. In this work, inspired 
+            by FF's goodness function using layer activity statistics, we introduce Action-conditioned Root 
+            mean squared Q-Functions (ARQ), a novel value estimation method that applies a goodness function 
+            and action conditioning for local RL using temporal difference learning. Despite its simplicity 
+            and biological grounding, our approach achieves superior performance compared to state-of-the-art 
+            local backprop-free RL methods in the MinAtar and the DeepMind Control Suite benchmarks, while 
+            also outperforming algorithms trained with backpropagation on most tasks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Background & Motivation -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 3rem; padding-bottom: 0rem;">
+      <h2 class="title is-3" style="margin-bottom: 1rem;">Background & Motivation</h2>
+      <p>
+        Backprop-based reinforcement learning (RL) relies on global error signals that are difficult to reconcile with biologically plausible learning. Recent local learning methods such as Forward-Forward show that meaningful representations can be learned without backpropagation, motivating their extension to RL. We propose Action-Conditioned RMS-Q (ARQ), a fully local, backprop-free RL algorithm that reformulates Q-learning using a vector-based, action-conditioned goodness objective. By estimating Q-values through layer-local RMS activations, ARQ removes architectural constraints present in prior local RL methods. Despite relying only on local updates, ARQ achieves competitive performance across standard RL benchmarks.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Method -->
+<section class="hero method">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 3rem; padding-bottom: 0rem;">
+      <h2 class="title is-3" style="margin-bottom: 1rem;">Method</h2>
+      <p>
+        Inspired by the Forward-Forward algorithm's goodness function using layer activity statistics, 
+        we propose <strong>Action-conditioned Root mean squared Q-Function (ARQ)</strong>, a simple vector-based 
+        alternative to traditional scalar-based Q-value predictors designed for local RL.
+      </p>
+      <div style="height: 0.7rem;"></div>
+      <p>
+        ARQ is composed of two key ingredients:
+      </p>
+      <ul style="margin-left: 2rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+        <li><strong>RMS Goodness Function:</strong> We extract value predictions from a vector of arbitrary size by 
+        computing the root mean squared (RMS) of the hidden layer activations: \(g_l = \sqrt{\text{mean}(h_l^2)}\). 
+        This significantly improves expressivity by allowing more neurons at the output layer without sacrificing 
+        the backprop-free property.</li>
+        <li><strong>Action Conditioning:</strong> We insert an action candidate at the model input, enabling the network 
+        to produce representations specific to each state-action pair. This unleashes the capacity of the network 
+        compared to prior local methods that relied on dot-products between learned mappings.</li>
+      </ul>
+      <p>
+        ARQ can be readily implemented on top of <a href="https://arxiv.org/abs/2405.15054" target="_blank">Artificial Dopamine (AD)</a>, 
+        taking full advantage of their non-linearity and attention-like mechanisms while maintaining biological plausibility.
+      </p>
+      <br>
+      <p style="text-align: center;">
+        <img src="static/images/Arch.png" alt="method figure" width="750" height=auto>
+      </p>
+      <div style="height: 1.5rem;"></div>
+      <p style="text-align: center;">
+        <img src="static/images/Pseudocode.png" alt="ARQ Algorithm Pseudocode" width="1000" height=auto>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Results -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 3rem; padding-bottom: 0rem;">
+      <h2 class="title is-3">Results</h2>
+      <p>
+        We evaluate ARQ on two challenging benchmarks designed to test RL algorithms in settings where local methods 
+        remain viable: <a href="https://arxiv.org/pdf/1903.03176" target="_blank">MinAtar</a> (5 discrete action games) 
+        and the <a href="https://arxiv.org/pdf/1801.00690" target="_blank">DeepMind Control Suite</a> (5 continuous control tasks).
+      </p>
+      <div style="height: 0.7rem;"></div>
+      <p>
+        <strong>Key Findings:</strong> ARQ consistently outperforms current local RL methods and 
+        <strong>surpasses conventional backprop-based value-learning methods in most games</strong>, demonstrating 
+        strong decision-making capabilities without relying on backpropagation. On MinAtar, ARQ shows 
+        particularly strong improvements on Breakout, SpaceInvaders, Seaquest, and Asterix. On DMC tasks, 
+        ARQ matches or exceeds the performance of SAC and TD-MPC2 while maintaining biological plausibility.
+      </p>
+      <br>
+      
+      <p style="text-align: center;">
+        <img src="static/images/Table.png" alt="Results Table" width="900" height=auto>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Analysis -->
+<section class="hero">
+  <div class="container is-max-desktop">
+    <div class="hero-body" style="padding-top: 3rem; padding-bottom: 0rem;">
+      <h2 class="title is-3">Analysis</h2>
+      
+      <h2 class="title is-4" style="margin-top: 2rem; margin-bottom: 1rem;">Effect of Action Conditioning at Input</h2>
+      <p>
+        We ablate on the effect of conditioning on our method. Our results show that without input-level action conditioning, the network struggles to differentiate between 
+        action-specific Q-values, leading to significantly degraded performance. This demonstrates that early fusion 
+        of action information is essential for learning meaningful state-action representations in a local learning framework. Interestingly, the benefits of action conditioning is only mild for AD, 
+        while being rather significant for ARQ.
+      </p>
+      <br>
+      <p style="text-align: center;">
+        <img src="static/images/Cond.png" alt="Action Conditioning Ablation" width="700" height=auto>
+      </p>
+      
+      <h2 class="title is-4" style="margin-top: 3rem; margin-bottom: 1rem;">Representation Analysis: Effect of Action Conditioning</h2>
+      <p>
+        We visualize the hidden layer activations 
+        using 2-component PCA on the MinAtar Breakout environment. 
+      </p>
+      <div style="height: 0.5rem;"></div>
+      <p>
+        <strong>Key Observation:</strong> Without action conditioning, activations cluster
+        almost entirely by action identity and show no meaningful correlation with Q-values, indicating that
+        action-related variance dominates the representation space. With action conditioning, representations become more state-driven and exhibit a mild positive relationship with Q-values, suggesting
+        that the model can allocate capacity toward value-relevant structure rather than implicitly inferring action identity.
+      </p>
+      <br>
+      <p style="text-align: center;">
+        <img src="static/images/Conditioning.png" alt="Representation Analysis" width="800" height=auto>
+      </p>
+      
+      <h2 class="title is-4" style="margin-top: 3rem; margin-bottom: 1rem;">ARQ (RMS Goodness) vs. ARQ-MS (Mean-Squared Goodness)</h2>
+      <p>
+        We ablate on the choice of goodness function between ARQ and ARQ-MS. 
+        We find that ARQ produces moderate, stable goodness magnitudes throughout
+        training, while ARQ-MS shows large initial spikes followed by sharply reduced variability.
+        This suggests that the square root 
+        operation in RMS helps normalize the magnitude of activations, preventing numerical instability while maintaining 
+        the sensitivity to layer activities. 
+      </p>
+      <br>
+      <p style="text-align: center;">
+        <img src="static/images/Rms.png" alt="RMS vs MS Comparison" width="900" height=auto>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!--BibTex citation -->
+<section class="hero">
+  <div class="container is-max-desktop" style="padding-top: 3rem; padding-bottom: 2rem;">
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{
+        wu2026local,
+        title={Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions},
+        author={Wu, Frank and Ren, Mengye},
+        booktitle={The Fourteenth International Conference on Learning Representations},
+        year={2026},
+        url={https://openreview.net/forum?id=pi4tbBMLsM}
+        }</code></pre>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
