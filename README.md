@@ -1,5 +1,8 @@
 # Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions
 
+- **Paper:** [Local Reinforcement Learning with Action-Conditioned Root Mean Squared Q-Functions](https://openreview.net/forum?id=pi4tbBMLsM)
+- **Website:** [https://agenticlearning.ai/arq/](https://agenticlearning.ai/arq/)
+
 ## Abstract
 
 The Forward-Forward (FF) Algorithm is a recently proposed learning procedure for neural networks that employs two forward passes instead of the traditional forward and backward passes used in backpropagation. However, FF remains largely confined to supervised settings, leaving a gap at domains where learning signals can be yielded more naturally such as RL. In this work, inspired by FF's goodness function using layer activity statistics, we introduce Action-conditioned Root mean squared Q-Functions (ARQ), a novel value estimation method that applies a goodness function and action conditioning for local RL using temporal difference learning. Despite its simplicity and biological grounding, our approach achieves superior performance compared to state-of-the-art local backprop-free RL methods in the MinAtar and the DeepMind Control Suite benchmarks, while also outperforming algorithms trained with backpropagation on most tasks.
