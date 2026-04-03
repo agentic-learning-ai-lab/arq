@@ -5,7 +5,6 @@
 ---
 
 [![Paper](https://img.shields.io/badge/paper-5f16a8?style=for-the-badge&logo=arxiv&logoColor=white)](https://openreview.net/forum?id=pi4tbBMLsM)
-[![Code](https://img.shields.io/badge/Code-3858bf?style=for-the-badge&logo=github&logoColor=white)](https://github.com/agentic-learning-ai-lab/arq)
 [![Website](https://img.shields.io/badge/Website-63cad3?style=for-the-badge&logo=homepage&logoColor=white)](https://agenticlearning.ai/arq/)
 
 </div>
